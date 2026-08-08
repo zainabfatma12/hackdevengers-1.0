@@ -1,0 +1,20 @@
+HACKDEVENGERS 1.0
+
+[ ] Problem statement understood
+[ ] MVP completed
+[ ] Core feature working
+[ ] AI/API feature working (if required)
+[ ] UI completed
+[ ] Error handling added
+[ ] Tested locally
+[ ] GitHub updated
+[ ] README completed
+[ ] Live deployment working
+[ ] Live URL tested
+[ ] Demo tested
+[ ] Project description written
+[ ] Official Google Form received
+[ ] GitHub URL entered
+[ ] Live URL entered
+[ ] All required fields completed
+[ ] Final submission submitted
