@@ -303,3 +303,21 @@ Developed for **HackDevengers 1.0**.
 **✅ Functional Prototype**
 
 Core civic reporting, intelligent issue assessment, priority classification, report identification, and civic dashboard functionality have been implemented.
+## 📸 Screenshots
+
+### 🏠 Home Page
+![CivicSense AI Home Page](screenshots/home.png)
+![CivicSense AI Home Page](screenshots/home1.png)
+![CivicSense AI Home Page](screenshots/home2.png)
+![CivicSense AI Home Page](screenshots/home3.png)
+
+### 📝 Report Issue
+![CivicSense AI Report Issue](screenshots/report.png)
+![CivicSense AI Report Issue](screenshots/reportsubmitted.png)
+### 🤖 AI Analysis
+![CivicSense AI Analysis](screenshots/analysis.png)
+
+### 📊 Civic Dashboard
+![CivicSense AI Dashboard](screenshots/dashboard1.png)
+![CivicSense AI Dashboard](screenshots/dashboard2.png)
+![CivicSense AI Dashboard](screenshots/dashboard3.png)
