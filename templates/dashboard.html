@@ -1,0 +1,288 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1.0">
+
+    <title>CivicSense Dashboard</title>
+
+    <link rel="stylesheet"
+          href="{{ url_for('static', filename='style.css') }}">
+
+</head>
+
+<body>
+
+<nav class="navbar">
+
+    <div class="logo">
+        Civic<span>Sense</span> AI
+    </div>
+
+    <div class="nav-links">
+
+        <a href="/">Home</a>
+
+        <a href="/#how-it-works">
+            How It Works
+        </a>
+
+        <a href="/#report">
+            Report Issue
+        </a>
+
+    </div>
+
+</nav>
+
+
+<section class="dashboard">
+
+    <div class="dashboard-header">
+
+        <div>
+
+            <div class="badge">
+                CIVICSENSE AI
+            </div>
+
+            <h1>
+                Civic Intelligence
+                <span>Dashboard</span>
+            </h1>
+
+            <p>
+                Monitor reported civic issues and identify
+                problems requiring priority attention.
+            </p>
+
+        </div>
+
+    </div>
+
+
+    <!-- STAT CARDS -->
+
+    <div class="dashboard-stats">
+
+        <div class="dashboard-card">
+
+            <span>📋</span>
+
+            <h3>
+                {{ total_reports }}
+            </h3>
+
+            <p>
+                Total Reports
+            </p>
+
+        </div>
+
+
+        <div class="dashboard-card">
+
+            <span>🚨</span>
+
+            <h3>
+                {{ high_priority }}
+            </h3>
+
+            <p>
+                High Priority
+            </p>
+
+        </div>
+
+
+        <div class="dashboard-card">
+
+            <span>⚠️</span>
+
+            <h3>
+                {{ medium_priority }}
+            </h3>
+
+            <p>
+                Medium Priority
+            </p>
+
+        </div>
+
+    </div>
+
+
+    <!-- CATEGORY SECTION -->
+
+    <div class="dashboard-section">
+
+        <h2>
+            Issues by Category
+        </h2>
+
+        <div class="category-list">
+
+            {% for category in categories %}
+
+            <div class="category-row">
+
+                <span>
+                    {{ category["category"] }}
+                </span>
+
+                <strong>
+                    {{ category["count"] }}
+                </strong>
+
+            </div>
+
+            {% else %}
+
+            <p>
+                No reports submitted yet.
+            </p>
+
+            {% endfor %}
+
+        </div>
+
+    </div>
+
+
+    <!-- RECENT REPORTS -->
+
+    <div class="dashboard-section">
+
+        <div class="section-title">
+
+            <h2>
+                Recent Civic Reports
+            </h2>
+
+            <span>
+                LIVE
+            </span>
+
+        </div>
+
+
+        <div class="table-container">
+
+            <table>
+
+                <thead>
+
+                    <tr>
+
+                        <th>
+                            Report ID
+                        </th>
+
+                        <th>
+                            Category
+                        </th>
+
+                        <th>
+                            Location
+                        </th>
+
+                        <th>
+                            Priority
+                        </th>
+
+                        <th>
+                            Score
+                        </th>
+
+                        <th>
+                            Department
+                        </th>
+
+                    </tr>
+
+                </thead>
+
+
+                <tbody>
+
+                    {% for report in reports %}
+
+                    <tr>
+
+                        <td>
+                            {{ report["report_id"] }}
+                        </td>
+
+                        <td>
+                            {{ report["category"] }}
+                        </td>
+
+                        <td>
+                            {{ report["location"] }}
+                        </td>
+
+                        <td>
+
+                            <span class="priority-badge
+                                {{ report['priority']|lower }}">
+
+                                {{ report["priority"] }}
+
+                            </span>
+
+                        </td>
+
+                        <td>
+                            {{ report["score"] }}/100
+                        </td>
+
+                        <td>
+                            {{ report["department"] }}
+                        </td>
+
+                    </tr>
+
+                    {% else %}
+
+                    <tr>
+
+                        <td colspan="6">
+
+                            No civic reports available.
+
+                        </td>
+
+                    </tr>
+
+                    {% endfor %}
+
+                </tbody>
+
+            </table>
+
+        </div>
+
+    </div>
+
+
+    <div class="dashboard-footer">
+
+        <a href="/">
+            ← Back to CivicSense
+        </a>
+
+        <a href="/#report">
+            + Report New Issue
+        </a>
+
+    </div>
+
+</section>
+
+</body>
+
+</html>
